@@ -14,21 +14,19 @@ int main() {
       A += num;
     }
     if(op == "-") {
-      cout << i+1 << ":" << A - num << endl;
+      cout << i+1 << ":" << A - num << endl; // 処理と出力を分ける。同じことしてるんだったらまとめられるか考える。
       A -= num;
     }
     if(op == "*") {
       cout << i+1 << ":" << A * num << endl;
       A *= num;
     }
-    if(op == "/") {// ここも一つにまとめられる。
-      if(num == 0) {
-        cout << "error" << endl;
-        break;
-      } else {
-        cout << i+1 << ":" << A / num << endl;
-        A /= num;
-      }
+    if(op == "/" && num != 0) {// ここも一つにまとめられる。
+      cout << i+1 << ":" << A / num << endl;
+      A /= num;
+    } else {
+      cout << "error" << endl;
+      break;
     }
   }
 }
