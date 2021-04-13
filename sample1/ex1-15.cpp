@@ -56,3 +56,41 @@ int main() {
   // プレゼントの予算を出力
   output(sum_A, sum_B, sum_C);
 }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// vector<int> input(int N) {
+//   vector<int> vec(N);
+//   for(int i=0; i<vec.size(); i++) {
+//     cin >> vec.at(i);
+//   }
+//   return vec;
+// }
+
+// int sum(vector<int> num) {
+//   int sum = 0;
+//   for(int i=0; i<num.size(); i++) {
+//     sum += num.at(i);
+//   }
+//   return sum;
+// }
+
+// void output(int a, int b, int c) {
+//   cout << a * b * c << endl;
+// }
+
+// int main() {
+//   int N;
+//   cin >> N;
+
+//   vector<int> A = input(N);
+//   vector<int> B = input(N);
+//   vector<int> C = input(N);
+
+//   int sum_a = sum(A);
+//   int sum_b = sum(B);
+//   int sum_c = sum(C);
+
+//   output(sum_a, sum_b, sum_c);
+// }
