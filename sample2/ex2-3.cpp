@@ -15,7 +15,7 @@ int main() {
 
   for(int i=0; i<M; i++) {
     // 1〜N → 0〜N-1 に変換
-    A.at(i)--; // A.at(i) = A.at(i) - 1;
+    A.at(i)--; // これは配列の添字を取得しているんじゃなくて、そこにある値を取得している。
     B.at(i)--;
     result.at(A.at(i)).at(B.at(i)) = 'o';
     result.at(B.at(i)).at(A.at(i)) = 'x';
@@ -24,7 +24,7 @@ int main() {
   for(int i=0; i<N; i++) {
     for(int j=0; j<N; j++) {
       cout << result.at(i).at(j);
-      if(j == N-1) {
+      if(j == N-1) {// jが列の添字で人数の値だから。各行の行末は改行をしそれ以外は空白を入れる必要があるから。加えて人数以上の試合は出来ないから。
         cout << endl;
       } else {
         cout << " ";
