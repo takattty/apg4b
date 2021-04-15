@@ -60,5 +60,5 @@ int main() {
   int size3 = Data.at(0).at(0).size();
   cout << size3 << endl;  // 4
 
-  cout << size1 * size2 * size3 << endl;  // 24
+  cout << size1 * size2 * size3 << endl;// 24
 }
