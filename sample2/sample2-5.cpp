@@ -33,8 +33,61 @@ int sum_range(int a, int b) {
   // return a + sum_range(a + 1, b); // こうやって1行で書ける
 }
 
+int array_sum_from_i(vector<int> &data, int i) {
+  // ベースケース
+  if(i == data.size()) {
+    return 0;
+  }
+
+  int s = array_sum_from_i(data, i + 1);
+  return data.at(i) + s;
+}
+
+int array_sum(vector<int> &data) {
+  return array_sum_from_i(data, 0);
+}
+
+bool is_prime_test(int i, int j) {
+  // int boolean = 0;
+  // if(i < j) {
+  //   return 0;
+  // } else if(i % j != 0) {
+  //   boolean = 1;
+  //   return boolean;
+  // }
+
+  // int result = is_prime_test(i+1, j);
+  // return result;
+
+  if(i == j) {
+    return false;
+  }
+
+  if(j % i == 0) {
+    return true;
+  }
+
+  return is_prime_test(i+1, j);
+}
+
+bool is_prime(int j) {
+  // return is_prime_test(2, j);
+
+  if(j == 1) {
+    return false;
+  } else if(j == 2) {
+    return true;
+  } else {
+    return !is_prime_test(2, j);
+  }
+}
+
 int main() {
-  cout << sum_range(3, 7) << endl;
-  cout << sum_range(0, 4) << endl; // 0 + 1 + 2 + 3 + 4 = 10
-  cout << sum_range(5, 8) << endl; // 5 + 6 + 7 + 8 = 26
+  // cout << sum_range(3, 7) << endl;
+  // vector<int> a = {0, 3, 9, 1, 5};
+  // cout << array_sum(a) << endl;
+  cout << is_prime(1) << endl;  // 0
+  cout << is_prime(2) << endl;  // 1
+  cout << is_prime(12) << endl; // 0
+  cout << is_prime(13) << endl; // 1
 }
