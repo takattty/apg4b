@@ -60,11 +60,11 @@ bool is_prime_test(int i, int j) {
   // return result;
 
   if(i == j) {
-    return false;
+    return true;
   }
 
   if(j % i == 0) {
-    return true;
+    return false;
   }
 
   return is_prime_test(i+1, j);
@@ -78,7 +78,7 @@ bool is_prime(int j) {
   } else if(j == 2) {
     return true;
   } else {
-    return !is_prime_test(2, j);
+    return is_prime_test(2, j);
   }
 }
 
