@@ -50,4 +50,30 @@ int main() {
     cout << pq.top() << endl;  // 最大の値を出力
     pq.pop();  // 最大の値を削除
   }
+
+  set<int> S;
+ 
+  S.insert(3);
+  S.insert(7);
+  S.insert(8);
+  S.insert(10);
+  // 既に3は含まれているのでこの操作は無視される
+  S.insert(3);
+ 
+  // 集合の要素数を出力
+  cout << "size: " << S.size() << endl;
+ 
+  // 7が含まれるか判定
+  if (S.count(7)) {
+    cout << "found 7" << endl;
+  }
+  // 5が含まれるか判定
+  if (S.count(5)) {
+    cout << "found 5" << endl;
+  }
+
+  if(!S.empty()) {
+    cout << *begin(S) << endl;
+    cout << *rbegin(S) << endl;
+  }
 }
