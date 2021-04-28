@@ -73,7 +73,40 @@ int main() {
   }
 
   if(!S.empty()) {
-    cout << *begin(S) << endl;
-    cout << *rbegin(S) << endl;
+    cout << *begin(S) << endl; // 最小値
+    cout << *rbegin(S) << endl; // 最大値
   }
+
+  stack<int> s;
+  s.push(10);
+  s.push(1);
+  s.push(3);
+ 
+  cout << s.top() << endl;  // 3 (最後に追加した値)
+  s.pop();
+  cout << s.top() << endl;  // 1 (その前に追加した値)
+
+  deque<int> d;
+  d.push_back(10);
+  d.push_back(1);
+  d.push_back(3);
+ 
+  // この時点で d の内容は { 10, 1, 3 } となっている
+ 
+  cout << d.front() << endl; // 10 (先頭の要素)
+  d.pop_front();  // 先頭を削除
+ 
+  // この時点で d の内容は { 1, 3 } となっている
+ 
+  cout << d.back() << endl;  // 3 (末尾の要素)
+  d.pop_back();  // 末尾を削除
+ 
+  // この時点で d の内容は { 1 } となっている
+ 
+  d.push_front(5);
+  d.push_back(2);
+ 
+  // この時点で d の内容は { 5, 1, 2 } となっている
+ 
+  cout << d.at(1) << endl; // 1
 }
