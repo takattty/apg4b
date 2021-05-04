@@ -50,25 +50,20 @@ struct Clock {
     string to_s_hour;
     string to_s_minute;
     string to_s_second;
-    if(hour < 10) {
-      string hours = to_string(hour);
-      to_s_hour = "0" + hours;
-    } else {
-      to_s_hour = to_string(hour);
-    }
-    if(minute < 10) {
-      string minutes = to_string(minute);
-      to_s_minute = "0" + minutes;
-    } else {
-      to_s_minute = to_string(minute);
-    }
-    if(second < 10) {
-      string seconds = to_string(second);
-      to_s_second = "0" + seconds;
-    } else {
-      to_s_second = to_string(second);
-    }
+    to_s_hour   = add_zero(hour);
+    to_s_minute = add_zero(minute);
+    to_s_second = add_zero(second);
     return to_s_hour + ":" + to_s_minute + ":" + to_s_second;
+  }
+
+  string add_zero(int time) {
+    string to_s_time;
+    if(time < 10) {
+      string times = to_string(time);
+      return to_s_time = "0" + times;
+    } else {
+      return to_s_time = to_string(time);
+    }
   }
 
   void shift(int diff_second) {
