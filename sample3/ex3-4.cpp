@@ -68,11 +68,13 @@ struct Clock {
 
   void shift(int diff_second) {
     int prepara_second = (hour * 3600) + (minute * 60) + second;
+    int result_second;
     if(diff_second > 0) {
       int all_second = (hour * 3600) + (minute * 60) + second + diff_second;
 
       if(all_second / 3600 >= 24) { // 秒→時換算 
         hour = 0;
+        result_second = all_second - (all_second / 3600);
       } else {
         hour = all_second / 3600;
       }
